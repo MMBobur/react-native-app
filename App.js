@@ -42,12 +42,12 @@ const App = () => {
         style={styles.button}
         onPress={() =>
           Alert.alert("Alert", item.title, [
-            { text: "tasdiqlash", onPress: () => console.log("ok") },
-            { text: "rad etish", onPress: () => console.log("no") },
-          ])
+            { text: "tasdiqlash", onPress: () => Alert.alert("OK") },
+            { text: "rad etish", onPress: () => Alert.alert("NO") },
+          ],{ cancelable: true })
         }
       >
-        <Text style={styles.text}>ayirish</Text>
+        <Text style={styles.text}>-</Text>
       </TouchableOpacity>
     </View>
   );
@@ -55,25 +55,18 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.title}>
-        <Text style={styles.title_text}>hello</Text>
+        <Text style={styles.title_text}>صلاة عرضية</Text>
       </View>
       <FlatList
         data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-      <View>
-        <TouchableOpacity activeOpacity={0.95} style={styles.button}>
-          <Text style={styles.text}>Hello</Text>
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  
-
   parent: {
     width: 300,
     height: 500,
@@ -87,9 +80,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    height: 200,
+    height: 320,
   },
   title_text: {
+    textAlign: "center",
     fontSize: 30,
     textTransform: "capitalize",
   },
@@ -100,13 +94,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     elevation: 3,
-    width: "20%",
+    width: "13%",
     alignSelf: "flex-end",
-    borderRadius: 10,
+    borderRadius: 50,
     zIndex: 100,
   },
   text: {
-    fontSize: 16,
+    fontSize: 35,
     color: "white",
   },
   container: {
@@ -116,14 +110,14 @@ const styles = StyleSheet.create({
   block: {
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "red",
+    borderColor: "green",
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "center",
     paddingHorizontal: 8,
     paddingVertical: 6,
     borderRadius: 4,
-    backgroundColor: "oldlace",
+    backgroundColor: "#E1E2E1",
     alignSelf: "flex-start",
     marginHorizontal: "1%",
     marginBottom: 6,
